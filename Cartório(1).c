@@ -3,56 +3,7 @@
 #include <locale.h> //Biblioteca de alocações de textos por região
 #include <string.h> //Biblioteca das strings
 
-int registrar() //Função de registrar os usuários no sistema
-{
-	//Início da criação de variáveis[string]
-	char arquivo[40];
-	char cpf[40];
-	char nome[40];
-	char sobrenome[40];
-	char cargo[40];
-	//Final da criação de variáveis[string]
-	
-	printf("Digite o CPF a ser cadastrado:\n"); //Coleta de infomormações do usuário
-	scanf("%s", cpf); // %s refere-se as strings
-	
-	strcpy(arquivo, cpf); //Responsável por copiar os valores das strings
-	
-	FILE *file; //FILE é a função. *file é para criar o arquivo no banco de dados
-	
-	file = fopen(arquivo, "w"); //"w" significa "write" - cria o arquivo
-	fprintf(file,"CPF: ");
-	fprintf(file,cpf); //Salvar o valor da variável
-	fclose(file); //Fechar o arquivo
-		
-	file = fopen(arquivo, "a"); //Atualizar a informação
-	fprintf(file," NOME: " );
-	fclose(file);
-	
-	printf("Digite o nome a ser cadastrado:\n");
-	scanf("%s",nome);
-	
-	file = fopen(arquivo, "a");
-	fprintf(file,nome);
-	fclose(file);
-	
-	file = fopen(arquivo, "a"); 
-	fprintf(file," SOBRENOME: " );
-	fclose(file);
-	
-	printf("Digite o sobrenome a ser cadastrado:\n");
-	scanf("%s",sobrenome);
-	
-	file = fopen(arquivo, "a");
-	fprintf(file,sobrenome);
-	fclose(file);
-	
-	file = fopen(arquivo, "a"); 
-	fprintf(file," CARGO: ");
-	fclose(file);
-	
-	printf("Digite o cargo a ser cadastrado: \n");
-	scanf("%s",cargo);
+
 	
 	file = fopen(arquivo, "a");
 	fprintf(file,cargo);
